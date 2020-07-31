@@ -1,32 +1,38 @@
+<div class="navbar-lewagon"></div>
 
-
-<div class="container" class="text-center">
-  <h1>HESHA 喝啥</h1>
-
-</div>
-<div class="container">
+<br>
+<div class="container" >
   <div class="row justify-content-center">
-    <div class="col-6">
-      <h3>喝什么，喝啥</h3>
-
+    <p><h1>HESHA 喝啥</h1></p>
+      <br>
+      <div class="container">
+      <div class="row justify-content-center">
+        <h5>喝什么，喝啥</h5>
+      </div>
     </div>
   </div>
 </div>
+<br>
+<br>
 
-
-<div class="add_btn_blue">
-  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary btn-lg" %>
-</div>
-
-<div class="item-list" >
+<div class="container">
+  <div class="item-list" >
   <%@cocktails.each do |cock| %>
     <%= link_to cocktail_path(cock) do %>
-  <li> <%= cock.name %>
-    <%= link_to "delete",  cocktail_path(cock), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-sm" %>
-  </li>
-</div>
+      <br>
+      <p><h4> <%= cock.name %>
+      <br>
+      <br>
+     <%= link_to "delete",  cocktail_path(cock), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
+      </h4></p>
+  </div>
   <% end %>
-    <% end %>
-
-
-
+  <% end %>
+  <br>
+  <br>
+<div class="container">
+<div class="add_btn_blue">
+  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary btn-sm" %>
+  </div>
+</div>
+</div>

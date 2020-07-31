@@ -1,12 +1,17 @@
+<br>
 <h1 class="text-center"><%= @cocktail.name %></h1>
-
-<% for i in @doses  %>
-<%= i.description %>
-<%= i.ingredient.name %>
-<%= link_to "delete", dose_path(i), method: :delete, data: { confirm: "Are you sure?"} %>
-<%  end %>
-
-<%= link_to "back", cocktails_path %>
-
-
-<%= link_to "Create", new_cocktail_dose_path(@cocktail) %>
+<div class="container">
+<br>
+  <% for i in @doses  %>
+  <br>
+  <%= i.description %>
+  <%= i.ingredient.name %>
+  <%= link_to "delete", dose_path(i),class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?"} %>
+  <br>
+  <%  end %>
+<br>
+  <%= link_to "Add Ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"  %>
+<br>
+<br>
+  <%= link_to "back", cocktails_path %>
+</div>
