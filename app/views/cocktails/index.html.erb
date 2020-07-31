@@ -1,13 +1,32 @@
-<h1 class="text-center">Cocktails</h1>
 
 
-<%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary btn-lg" %>
+<div class="container" class="text-center">
+  <h1>HESHA 喝啥</h1>
 
-<div>
-  <% @cocktails.each do |cock| %>
-  <%= link_to cocktail_path(cock) do %>
-  <%= cock.name %>
-  <%= link_to "delete", cocktail_path(cock), method: :delete, data: { confirm: "Are you sure?"} %>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <h3>喝什么，喝啥</h3>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="add_btn_blue">
+  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary btn-lg" %>
+</div>
+
+<div class="item-list" >
+  <%@cocktails.each do |cock| %>
+    <%= link_to cocktail_path(cock) do %>
+  <li> <%= cock.name %>
+    <%= link_to "delete",  cocktail_path(cock), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-primary btn-sm" %>
+  </li>
 </div>
   <% end %>
-  <% end %>
+    <% end %>
+
+
+
