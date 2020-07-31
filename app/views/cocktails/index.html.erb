@@ -12,27 +12,31 @@
     </div>
   </div>
 </div>
+
+<br>
+<br>
+
+<div class="container">
+<div class="add_btn_blue">
+  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary btn-sm" %>
+</div>
+
 <br>
 <br>
 
 <div class="container">
   <div class="item-list" >
-  <%@cocktails.each do |cock| %>
-    <%= link_to cocktail_path(cock) do %>
+  <%@cocktails.each do |c| %>
+    <%= link_to cocktail_path(c) do %>
       <br>
-      <p><h4> <%= cock.name %>
+      <h4> <%= c.name %></h4>
+      <br>
+      <%= cl_image_tag c.photo.key, height: 300, width: 400, crop: :fill %>
       <br>
       <br>
-     <%= link_to "delete",  cocktail_path(cock), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
-      </h4></p>
+     <%= link_to "delete",  cocktail_path(c), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger btn-sm" %>
+      </p>
   </div>
   <% end %>
   <% end %>
-  <br>
-  <br>
-<div class="container">
-<div class="add_btn_blue">
-  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary btn-sm" %>
-  </div>
-</div>
 </div>
